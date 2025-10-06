@@ -44,7 +44,7 @@
     <style>
         @layer base {
             :root {
-                /* Cores do Modo Claro (inalteradas) */
+                /* Cores do Modo Claro (Padrão) */
                 --background: 220 25% 97%; --foreground: 230 50% 15%;
                 --card: 0 0% 100%; --card-foreground: 230 50% 15%;
                 --popover: 0 0% 100%; --popover-foreground: 230 50% 15%;
@@ -74,19 +74,6 @@
             body { @apply bg-background text-foreground; }
         }
         
-        /* Regras de correção para o Modo Escuro */
-        .dark h2,
-        .dark p,
-        .dark a,
-        .dark span {
-             color: inherit; /* Permite que o texto herde a nova cor foreground */
-        }
-        .dark .text-accent {
-            color: hsl(var(--accent));
-        }
-        .dark .text-primary-foreground {
-            color: hsl(var(--primary-foreground));
-        }
         /* Efeito de contorno roxo na imagem */
         .profile-border {
              border: 4px solid hsl(var(--accent)); /* Usa a cor de destaque (roxo) para o contorno */
@@ -142,14 +129,14 @@
             </div>
             
             <div class="max-w-3xl mx-auto text-center space-y-6">
-                <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Sobre Mim</h2>
-                <p class="text-lg leading-relaxed">
+                <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl **text-foreground**">Sobre Mim</h2>
+                <p class="text-lg leading-relaxed **text-foreground/90**">
                     Sou uma profissional apaixonada por descobrir histórias escondidas nos dados. Com experiência em ferramentas como Power BI, Looker Studio e Python, desenvolvo soluções analíticas que transformam números complexos em visualizações claras e acionáveis.
                 </p>
                 <div class="flex gap-4 justify-center pt-4">
-                    <a href="https://github.com/mariaefoliveira" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full hover:bg-secondary transition"><i class="fab fa-github h-5 w-5"></i></a>
-                    <a href="https://www.linkedin.com/in/maria-eduarda-falcao-de-oliveira/" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full hover:bg-secondary transition"><i class="fab fa-linkedin h-5 w-5"></i></a>
-                    <a href="mailto:dudafalcaodeoliveira@gmail.com" class="p-2 rounded-full hover:bg-secondary transition"><i class="fas fa-envelope h-5 w-5"></i></a>
+                    <a href="https://github.com/mariaefoliveira" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full hover:bg-secondary transition **text-foreground**"><i class="fab fa-github h-5 w-5"></i></a>
+                    <a href="https://www.linkedin.com/in/maria-eduarda-falcao-de-oliveira/" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full hover:bg-secondary transition **text-foreground**"><i class="fab fa-linkedin h-5 w-5"></i></a>
+                    <a href="mailto:dudafalcaodeoliveira@gmail.com" class="p-2 rounded-full hover:bg-secondary transition **text-foreground**"><i class="fas fa-envelope h-5 w-5"></i></a>
                 </div>
             </div>
         </div>
@@ -158,8 +145,8 @@
     <section id="projetos" class="py-16 md:py-24 **bg-background**">
         <div class="container px-4 md:px-6">
             <div class="text-center space-y-4 mb-12">
-                <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Meus Projetos</h2>
-                <p class="text-lg max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl **text-foreground**">Meus Projetos</h2>
+                <p class="text-lg max-w-2xl mx-auto **text-foreground/90**">
                     Explore alguns dos meus trabalhos recentes em análise de dados e visualização.
                 </p>
             </div>
@@ -171,11 +158,11 @@
     <footer class="border-t border-border/40 **bg-card**">
         <div class="container px-4 md:px-6 py-8">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                <p class="text-sm">&copy; 2025 Maria Eduarda Falcão de Oliveira. Todos os direitos reservados.</p>
+                <p class="text-sm **text-foreground/80**">&copy; 2025 Maria Eduarda Falcão de Oliveira. Todos os direitos reservados.</p>
                 <div class="flex gap-4">
-                    <a href="https://github.com/mariaefoliveira" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors">GitHub</a>
-                    <a href="https://www.linkedin.com/in/maria-eduarda-falcao-de-oliveira/" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors">LinkedIn</a>
-                    <a href="mailto:dudafalcaodeoliveira@gmail.com" class="hover:text-accent transition-colors">Contato</a>
+                    <a href="https://github.com/mariaefoliveira" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors **text-foreground/90**">GitHub</a>
+                    <a href="https://www.linkedin.com/in/maria-eduarda-falcao-de-oliveira/" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors **text-foreground/90**">LinkedIn</a>
+                    <a href="mailto:dudafalcaodeoliveira@gmail.com" class="hover:text-accent transition-colors **text-foreground/90**">Contato</a>
                 </div>
             </div>
         </div>
