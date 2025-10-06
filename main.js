@@ -44,7 +44,7 @@ function renderProjects(projetos) {
             ${imageHtml}
             <div class="p-6 space-y-4">
                 <div>
-                    <h3 class="text-xl font-bold text-foreground mb-2 card-hover:hover:text-accent transition-colors">${projeto.title}</h3>
+                    <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-accent transition-colors">${projeto.title}</h3>
                     <p class="text-muted-foreground text-sm leading-relaxed">${projeto.description}</p>
                 </div>
                 <div class="flex flex-wrap gap-2">
