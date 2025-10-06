@@ -45,45 +45,68 @@
         @layer base {
             :root {
                 /* Cores do Modo Claro (Padrão) */
-                --background: 220 25% 97%; --foreground: 230 50% 15%;
-                --card: 0 0% 100%; --card-foreground: 230 50% 15%;
-                --popover: 0 0% 100%; --popover-foreground: 230 50% 15%;
-                --primary: 230 50% 25%; --primary-foreground: 0 0% 98%;
-                --secondary: 270 40% 90%; --secondary-foreground: 230 50% 15%;
-                --muted: 220 20% 92%; --muted-foreground: 230 20% 45%;
-                --accent: 270 60% 55%; --accent-foreground: 0 0% 98%;
-                --destructive: 0 84.2% 60.2%; --destructive-foreground: 0 0% 98%;
-                --border: 220 20% 88%; --input: 220 20% 88%; --ring: 270 60% 55%;
+                --background: 220 25% 97%;
+                --foreground: 230 50% 15%;
+                --card: 0 0% 100%;
+                --card-foreground: 230 50% 15%;
+                --popover: 0 0% 100%;
+                --popover-foreground: 230 50% 15%;
+                --primary: 230 50% 25%;
+                --primary-foreground: 0 0% 98%;
+                --secondary: 270 40% 90%;
+                --secondary-foreground: 230 50% 15%;
+                --muted: 220 20% 92%;
+                --muted-foreground: 230 20% 45%;
+                --accent: 270 60% 55%;
+                --accent-foreground: 0 0% 98%;
+                --destructive: 0 84.2% 60.2%;
+                --destructive-foreground: 0 0% 98%;
+                --border: 220 20% 88%;
+                --input: 220 20% 88%;
+                --ring: 270 60% 55%;
                 --radius: 0.75rem;
-                --gradient-start: 230 50% 25%; --gradient-end: 270 60% 55%;
+                --gradient-start: 230 50% 25%;
+                --gradient-end: 270 60% 55%;
             }
             .dark {
-                /* Cores do Modo Escuro (Ajustadas para ser mais escuras e harmônicas) */
-                --background: 230 20% 5%; /* Cinza muito escuro azulado (quase preto) */
-                --foreground: 0 0% 98%; 
-                --card: 230 20% 10%; /* Ligeiramente mais claro que o fundo */
-                --popover: 0 0% 8%; --popover-foreground: 0 0% 98%;
-                --primary: 270 70% 65%; --primary-foreground: 0 0% 98%;
-                --secondary: 230 20% 15%; --secondary-foreground: 0 0% 98%;
-                --muted: 230 20% 20%; --muted-foreground: 220 15% 75%; 
-                --accent: 270 70% 65%; --accent-foreground: 0 0% 98%;
-                --destructive: 0 62.8% 50.6%; --destructive-foreground: 0 0% 98%;
-                --border: 230 20% 25%; --input: 230 20% 15%; --ring: 270 70% 65%;
+                /* Modo escuro: fundo roxo bem escuro/quase preto, textos brancos */
+                --background: 270 35% 7%; /* Roxo bem escuro (quase preto, harmoniza com o roxo do gradiente) */
+                --foreground: 0 0% 100%; /* Branco puro para texto principal */
+                --card: 270 35% 12%; /* Card um pouco mais claro que o fundo */
+                --card-foreground: 0 0% 100%; /* Branco puro para texto em card */
+                --popover: 270 35% 12%;
+                --popover-foreground: 0 0% 100%;
+                --primary: 270 60% 55%; /* Roxo médio para gradiente/botões */
+                --primary-foreground: 0 0% 100%;
+                --secondary: 270 40% 20%; /* Roxo escuro para elementos secundários */
+                --secondary-foreground: 0 0% 100%;
+                --muted: 270 20% 25%; /* Roxo acinzentado para textos muted */
+                --muted-foreground: 0 0% 98%; /* Quase branco para textos muted */
+                --accent: 270 60% 55%;
+                --accent-foreground: 0 0% 100%;
+                --destructive: 0 62.8% 50.6%;
+                --destructive-foreground: 0 0% 98%;
+                --border: 270 20% 25%; /* Roxo acinzentado para bordas */
+                --input: 270 20% 15%; /* Roxo acinzentado para inputs */
+                --ring: 270 60% 55%;
+                --gradient-start: 230 50% 25%; /* Azul escuro */
+                --gradient-end: 270 60% 55%; /* Roxo médio */
             }
             * { @apply border-border; }
             body { @apply bg-background text-foreground; }
         }
-        
-        /* Efeito de contorno roxo na imagem */
         .profile-border {
-             border: 4px solid hsl(var(--accent)); /* Usa a cor de destaque (roxo) para o contorno */
-             box-shadow: 0 0 0 6px hsl(var(--background)); /* Cria um efeito de "moldura" que separa a borda da seção */
+             border: 4px solid hsl(var(--accent));
+             box-shadow: 0 0 0 6px hsl(var(--background));
         }
-        /* Animações e Hovers */
         @keyframes accordion-down { from { height: 0; } to { height: var(--radix-accordion-content-height); } }
         @keyframes accordion-up { from { height: var(--radix-accordion-content-height); } to { height: 0; } }
         .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px hsl(var(--accent) / 0.1); }
         .image-hover:hover { transform: scale(1.1); }
+        /* Garantir branco puro em header/footer e textos principais */
+        header, footer, header *, footer *, .text-foreground, .text-primary-foreground, .text-muted-foreground, .text-secondary-foreground {
+            color: #fff !important;
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -91,6 +114,7 @@
         <div class="container flex h-16 items-center justify-between">
             <div class="flex items-center gap-2">
                 <i class="fas fa-chart-line text-accent h-6 w-6"></i>
+                <!-- Data Portfolio com gradiente azul-roxo e texto branco -->
                 <span class="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">Data Portfolio</span>
             </div>
         </div>
@@ -119,50 +143,49 @@
         </div>
     </section>
 
-    <section class="py-16 md:py-24 **bg-card**">
+    <section class="py-16 md:py-24 bg-card">
         <div class="container px-4 md:px-6">
-            
             <div class="flex justify-center mb-12">
                  <div id="profile-image-container">
                     <img src="https://via.placeholder.com/150/800080/FFFFFF?text=ME" alt="Foto de Perfil" class="w-36 h-36 rounded-full profile-border object-cover transition-transform image-hover">
                  </div>
             </div>
-            
             <div class="max-w-3xl mx-auto text-center space-y-6">
-                <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl **text-foreground**">Sobre Mim</h2>
-                <p class="text-lg leading-relaxed **text-foreground/90**">
+                <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-foreground">Sobre Mim</h2>
+                <p class="text-lg leading-relaxed text-muted-foreground">
                     Sou uma profissional apaixonada por descobrir histórias escondidas nos dados. Com experiência em ferramentas como Power BI, Looker Studio e Python, desenvolvo soluções analíticas que transformam números complexos em visualizações claras e acionáveis.
                 </p>
                 <div class="flex gap-4 justify-center pt-4">
-                    <a href="https://github.com/mariaefoliveira" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full hover:bg-secondary transition **text-foreground**"><i class="fab fa-github h-5 w-5"></i></a>
-                    <a href="https://www.linkedin.com/in/maria-eduarda-falcao-de-oliveira/" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full hover:bg-secondary transition **text-foreground**"><i class="fab fa-linkedin h-5 w-5"></i></a>
-                    <a href="mailto:dudafalcaodeoliveira@gmail.com" class="p-2 rounded-full hover:bg-secondary transition **text-foreground**"><i class="fas fa-envelope h-5 w-5"></i></a>
+                    <a href="https://github.com/mariaefoliveira" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full hover:bg-secondary transition"><i class="fab fa-github h-5 w-5 text-foreground"></i></a>
+                    <a href="https://www.linkedin.com/in/maria-eduarda-falcao-de-oliveira/" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full hover:bg-secondary transition"><i class="fab fa-linkedin h-5 w-5 text-foreground"></i></a>
+                    <a href="mailto:dudafalcaodeoliveira@gmail.com" class="p-2 rounded-full hover:bg-secondary transition"><i class="fas fa-envelope h-5 w-5 text-foreground"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projetos" class="py-16 md:py-24 **bg-background**">
+    <section id="projetos" class="py-16 md:py-24 bg-background">
         <div class="container px-4 md:px-6">
             <div class="text-center space-y-4 mb-12">
-                <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl **text-foreground**">Meus Projetos</h2>
-                <p class="text-lg max-w-2xl mx-auto **text-foreground/90**">
+                <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-foreground">Meus Projetos</h2>
+                <p class="text-lg max-w-2xl mx-auto text-muted-foreground">
                     Explore alguns dos meus trabalhos recentes em análise de dados e visualização.
                 </p>
             </div>
             <div id="projetos-grid" class="grid gap-6 md:grid-cols-2 lg:grid-cols-2 max-w-6xl mx-auto">
-                </div>
+                <!-- Cards de projeto -->
+            </div>
         </div>
     </section>
 
-    <footer class="border-t border-border/40 **bg-card**">
+    <footer class="border-t border-border/40 bg-card">
         <div class="container px-4 md:px-6 py-8">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                <p class="text-sm **text-foreground/80**">&copy; 2025 Maria Eduarda Falcão de Oliveira. Todos os direitos reservados.</p>
+                <p class="text-sm text-muted-foreground">&copy; 2025 Maria Eduarda Falcão de Oliveira. Todos os direitos reservados.</p>
                 <div class="flex gap-4">
-                    <a href="https://github.com/mariaefoliveira" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors **text-foreground/90**">GitHub</a>
-                    <a href="https://www.linkedin.com/in/maria-eduarda-falcao-de-oliveira/" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors **text-foreground/90**">LinkedIn</a>
-                    <a href="mailto:dudafalcaodeoliveira@gmail.com" class="hover:text-accent transition-colors **text-foreground/90**">Contato</a>
+                    <a href="https://github.com/mariaefoliveira" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors text-muted-foreground">GitHub</a>
+                    <a href="https://www.linkedin.com/in/maria-eduarda-falcao-de-oliveira/" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors text-muted-foreground">LinkedIn</a>
+                    <a href="mailto:dudafalcaodeoliveira@gmail.com" class="hover:text-accent transition-colors text-muted-foreground">Contato</a>
                 </div>
             </div>
         </div>
