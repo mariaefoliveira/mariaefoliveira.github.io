@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Portfolio - Análise de Dados</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Config Tailwind customizada (integra design system) -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                container: {
+                    center: true,
+                    padding: '2rem',
+                    screens: { '2xl': '1400px' }
+                },
+                extend: {
+                    colors: {
+                        border: 'hsl(var(--border))',
+                        input: 'hsl(var(--input))',
+                        ring: 'hsl(var(--ring))',
+                        background: 'hsl(var(--background))',
+                        foreground: 'hsl(var(--foreground))',
+                        primary: {
+                            DEFAULT: 'hsl(var(--primary))',
+                            foreground: 'hsl(var(--primary-foreground))'
+                        },
+                        secondary: {
+                            DEFAULT: 'hsl(var(--secondary))',
+                            foreground: 'hsl(var(--secondary-foreground))'
+                        },
+                        destructive: {
+                            DEFAULT: 'hsl(var(--destructive))',
+                            foreground: 'hsl(var(--destructive-foreground))'
+                        },
+                        muted: {
+                            DEFAULT: 'hsl(var(--muted))',
+                            foreground: 'hsl(var(--muted-foreground))'
+                        },
+                        accent: {
+                            DEFAULT: 'hsl(var(--accent))',
+                            foreground: 'hsl(var(--accent-foreground))'
+                        },
+                        popover: {
+                            DEFAULT: 'hsl(var(--popover))',
+                            foreground: 'hsl(var(--popover-foreground))'
+                        },
+                        card: {
+                            DEFAULT: 'hsl(var(--card))',
+                            foreground: 'hsl(var(--card-foreground))'
+                        },
+                        glass: {
+                            bg: 'hsl(var(--glass-bg))',
+                            border: 'hsl(var(--glass-border))'
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-primary': 'linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)))',
+                        'gradient-radial': 'radial-gradient(circle at top right, hsl(var(--gradient-start)), hsl(var(--gradient-end)))'
+                    },
+                    borderRadius: {
+                        lg: 'var(--radius)',
+                        md: 'calc(var(--radius) - 2px)',
+                        sm: 'calc(var(--radius) - 4px)'
+                    },
+                    animation: {
+                        'accordion-down': 'accordion-down 0.2s ease-out',
+                        'accordion-up': 'accordion-up 0.2s ease-out'
+                    }
+                }
+            },
+            plugins: [] // tailwindcss-animate não é necessário para vanilla
+        }
+    </script>
+    <!-- Vars CSS do design system (HSL para azul/roxo harmônico) -->
+    <style>
+        @layer base {
+            :root {
+                --background: 220 25% 97%;
+                --foreground: 230 50% 15%;
+                --card: 0 0% 100%;
+                --card-foreground: 230 50% 15%;
+                --popover: 0 0% 100%;
+                --popover-foreground: 230 50% 15%;
+                --primary: 230 50% 25%; /* Azul escuro */
+                --primary-foreground: 0 0% 98%;
+                --secondary: 270 40% 90%; /* Roxo claro */
+                --secondary-foreground: 230 50% 15%;
+                --muted: 220 20% 92%;
+                --muted-foreground: 230 20% 45%;
+                --accent: 270 60% 55%; /* Roxo médio */
+                --accent-foreground: 0 0% 98%;
+                --destructive: 0 84.2% 60.2%;
+                --destructive-foreground: 0 0% 98%;
+                --border: 220 20% 88%;
+                --input: 220 20% 88%;
+                --ring: 270 60% 55%;
+                --radius: 0.75rem;
+                --gradient-start: 230 50% 25%; /* Azul para gradient */
+                --gradient-end: 270 60% 55%; /* Roxo para gradient */
+                --glass-bg: 0 0% 100%;
+                --glass-border: 220 20% 88%;
+            }
+            .dark {
+                --background: 230 45% 8%;
+                --foreground: 220 15% 95%;
+                --card: 230 40% 12%;
+                --card-foreground: 220 15% 95%;
+                --popover: 230 40% 12%;
+                --popover-foreground: 220 15% 95%;
+                --primary: 270 60% 55%; /* Roxo no dark */
+                --primary-foreground: 0 0% 98%;
+                --secondary: 230 35% 18%;
+                --secondary-foreground: 220 15% 95%;
+                --muted: 230 35% 18%;
+                --muted-foreground: 220 15% 65%;
+                --accent: 270 60% 55%;
+                --accent-foreground: 0 0% 98%;
+                --destructive: 0 62.8% 50.6%;
+                --destructive-foreground: 0 0% 98%;
+                --border: 230 35% 18%;
+                --input: 230 35% 18%;
+                --ring: 270 60% 55%;
+                --gradient-start: 230 50% 25%;
+                --gradient-end: 270 60% 55%;
+                --glass-bg: 230 40% 12%;
+                --glass-border: 230 35% 25%;
+            }
+            * { @apply border-border; }
+            body { @apply bg-background text-foreground; }
+        }
+        /* Keyframes para animações (se necessário) */
+        @keyframes accordion-down { from { height: 0; } to { height: var(--radix-accordion-content-height); } }
+        @keyframes accordion-up { from { height: var(--radix-accordion-content-height); } to { height: 0; } }
+        /* Hover effects custom para cards */
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px hsl(var(--accent) / 0.1); }
+        .image-hover { transition: transform 0.5s ease; }
+        .image-hover:hover { transform: scale(1.1); }
+        .btn-hover { transition: all 0.3s ease; }
+        .btn-hover:hover { transform: rotate(12deg); }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div class="container flex h-16 items-center justify-between">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-chart-line text-accent h-6 w-6"></i>
+                <span class="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">Data Portfolio</span>
+            </div>
+            <button id="themeToggle" class="p-2 rounded-full hover:bg-secondary transition-all duration-300" aria-label="Toggle theme">
+                <i class="fas fa-moon h-5 w-5"></i> <!-- Muda via JS -->
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-gradient-radial py-20 md:py-32">
+        <div class="container px-4 md:px-6">
+            <div class="flex flex-col items-center space-y-8 text-center">
+                <div class="space-y-4 max-w-3xl">
+                    <h1 class="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-primary-foreground drop-shadow-lg">
+                        Transformando Dados em <span class="text-accent">Insights Valiosos</span>
+                    </h1>
+                    <p class="mx-auto max-w-[700px] text-lg md:text-xl text-primary-foreground/90 leading-relaxed">
+                        Analista de Dados especializado em criar dashboards interativos e análises que impulsionam decisões estratégicas baseadas em dados.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <a href="#projetos" class="px-8 py-3 bg-card text-card-foreground hover:bg-card/90 border border-border shadow-lg rounded-lg text-lg font-medium transition">Ver Projetos</a>
+                    <a href="https://github.com/seu-usuario" target="_blank" rel="noopener noreferrer" class="px-8 py-3 bg-transparent border border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 rounded-lg text-lg font-medium transition flex items-center gap-2">
+                        <i class="fab fa-github h-5 w-5"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 md:py-24 bg-secondary/30">
+        <div class="container px-4 md:px-6">
+            <div class="max-w-3xl mx-auto text-center space-y-6">
+                <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-foreground">Sobre Mim</h2>
+                <p class="text-muted-foreground text-lg leading-relaxed">
+                    Sou apaixonado por descobrir histórias escondidas nos dados. Com experiência em ferramentas como Power BI, Looker Studio e Python, desenvolvo soluções analíticas que transformam números complexos em visualizações claras e acionáveis.
+                </p>
+                <div class="flex gap-4 justify-center pt-4">
+                    <a href="https://github.com/seu-usuario" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full hover:bg-secondary transition">
+                        <i class="fab fa-github h-5 w-5 text-foreground"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/seu-usuario" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full hover:bg-secondary transition">
+                        <i class="fab fa-linkedin h-5 w-5 text-foreground"></i>
+                    </a>
+                    <a href="mailto:seu-email@exemplo.com" class="p-2 rounded-full hover:bg-secondary transition">
+                        <i class="fas fa-envelope h-5 w-5 text-foreground"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projetos" class="py-16 md:py-24">
+        <div class="container px-4 md:px-6">
+            <div class="text-center space-y-4 mb-12">
+                <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-foreground">Meus Projetos</h2>
+                <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+                    Explore alguns dos meus trabalhos recentes em análise de dados e visualização.
+                </p>
+            </div>
+            <div id="projetos-grid" class="grid gap-6 md:grid-cols-2 lg:grid-cols-2 max-w-6xl mx-auto">
+                <!-- Cards gerados dinamicamente pelo JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-border bg-card/50 backdrop-blur-sm">
+        <div class="container px-4 md:px-6 py-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-sm text-muted-foreground">&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
+                <div class="flex gap-4">
+                    <a href="https://github.com/seu-usuario" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-accent transition-colors">GitHub</a>
+                    <a href="https://linkedin.com/in/seu-usuario" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-accent transition-colors">LinkedIn</a>
+                    <a href="mailto:seu-email@exemplo.com" class="text-muted-foreground hover:text-accent transition-colors">Contato</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
