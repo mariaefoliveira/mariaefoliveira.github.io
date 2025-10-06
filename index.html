@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Portfolio - Análise de Dados</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome CDN para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Config Tailwind customizada -->
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -25,138 +22,81 @@
                         ring: 'hsl(var(--ring))',
                         background: 'hsl(var(--background))',
                         foreground: 'hsl(var(--foreground))',
-                        primary: {
-                            DEFAULT: 'hsl(var(--primary))',
-                            foreground: 'hsl(var(--primary-foreground))'
-                        },
-                        secondary: {
-                            DEFAULT: 'hsl(var(--secondary))',
-                            foreground: 'hsl(var(--secondary-foreground))'
-                        },
-                        destructive: {
-                            DEFAULT: 'hsl(var(--destructive))',
-                            foreground: 'hsl(var(--destructive-foreground))'
-                        },
-                        muted: {
-                            DEFAULT: 'hsl(var(--muted))',
-                            foreground: 'hsl(var(--muted-foreground))'
-                        },
-                        accent: {
-                            DEFAULT: 'hsl(var(--accent))',
-                            foreground: 'hsl(var(--accent-foreground))'
-                        },
-                        popover: {
-                            DEFAULT: 'hsl(var(--popover))',
-                            foreground: 'hsl(var(--popover-foreground))'
-                        },
-                        card: {
-                            DEFAULT: 'hsl(var(--card))',
-                            foreground: 'hsl(var(--card-foreground))'
-                        },
-                        glass: {
-                            bg: 'hsl(var(--glass-bg))',
-                            border: 'hsl(var(--glass-border))'
-                        }
+                        primary: { DEFAULT: 'hsl(var(--primary))', foreground: 'hsl(var(--primary-foreground))' },
+                        secondary: { DEFAULT: 'hsl(var(--secondary))', foreground: 'hsl(var(--secondary-foreground))' },
+                        destructive: { DEFAULT: 'hsl(var(--destructive))', foreground: 'hsl(var(--destructive-foreground))' },
+                        muted: { DEFAULT: 'hsl(var(--muted))', foreground: 'hsl(var(--muted-foreground))' },
+                        accent: { DEFAULT: 'hsl(var(--accent))', foreground: 'hsl(var(--accent-foreground))' },
+                        popover: { DEFAULT: 'hsl(var(--popover))', foreground: 'hsl(var(--popover-foreground))' },
+                        card: { DEFAULT: 'hsl(var(--card))', foreground: 'hsl(var(--card-foreground))' },
                     },
+                    borderRadius: { lg: 'var(--radius)', md: 'calc(var(--radius) - 2px)', sm: 'calc(var(--radius) - 4px)' },
+                    animation: { 'accordion-down': 'accordion-down 0.2s ease-out', 'accordion-up': 'accordion-up 0.2s ease-out' },
                     backgroundImage: {
                         'gradient-primary': 'linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)))',
                         'gradient-radial': 'radial-gradient(circle at top right, hsl(var(--gradient-start)), hsl(var(--gradient-end)))'
-                    },
-                    borderRadius: {
-                        lg: 'var(--radius)',
-                        md: 'calc(var(--radius) - 2px)',
-                        sm: 'calc(var(--radius) - 4px)'
-                    },
-                    animation: {
-                        'accordion-down': 'accordion-down 0.2s ease-out',
-                        'accordion-up': 'accordion-up 0.2s ease-out'
                     }
                 }
             },
             plugins: []
         }
     </script>
-    <!-- Vars CSS do design system -->
     <style>
         @layer base {
             :root {
-                --background: 220 25% 97%;
-                --foreground: 230 50% 15%;
-                --card: 0 0% 100%;
-                --card-foreground: 230 50% 15%;
-                --popover: 0 0% 100%;
-                --popover-foreground: 230 50% 15%;
-                --primary: 230 50% 25%;
-                --primary-foreground: 0 0% 98%;
-                --secondary: 270 40% 90%;
-                --secondary-foreground: 230 50% 15%;
-                --muted: 220 20% 92%;
-                --muted-foreground: 230 20% 45%;
-                --accent: 270 60% 55%;
-                --accent-foreground: 0 0% 98%;
-                --destructive: 0 84.2% 60.2%;
-                --destructive-foreground: 0 0% 98%;
-                --border: 220 20% 88%;
-                --input: 220 20% 88%;
-                --ring: 270 60% 55%;
+                --background: 220 25% 97%; --foreground: 230 50% 15%;
+                --card: 0 0% 100%; --card-foreground: 230 50% 15%;
+                --popover: 0 0% 100%; --popover-foreground: 230 50% 15%;
+                --primary: 230 50% 25%; --primary-foreground: 0 0% 98%;
+                --secondary: 270 40% 90%; --secondary-foreground: 230 50% 15%;
+                --muted: 220 20% 92%; --muted-foreground: 230 20% 45%;
+                --accent: 270 60% 55%; --accent-foreground: 0 0% 98%;
+                --destructive: 0 84.2% 60.2%; --destructive-foreground: 0 0% 98%;
+                --border: 220 20% 88%; --input: 220 20% 88%; --ring: 270 60% 55%;
                 --radius: 0.75rem;
-                --gradient-start: 230 50% 25%;
-                --gradient-end: 270 60% 55%;
-                --glass-bg: 0 0% 100%;
-                --glass-border: 220 20% 88%;
+                --gradient-start: 230 50% 25%; --gradient-end: 270 60% 55%;
             }
-            
             .dark {
-                --background: 0 0% 0%;
-                --foreground: 0 0% 100%;
-                --card: 230 30% 9%;
-                --card-foreground: 0 0% 100%;
-                --popover: 230 30% 9%;
-                --popover-foreground: 0 0% 100%;
-                --primary: 270 70% 65%;
-                --primary-foreground: 0 0% 98%;
-                --secondary: 230 35% 15%;
-                --secondary-foreground: 0 0% 100%;
-                --muted: 230 35% 20%;
-                --muted-foreground: 220 15% 80%;
-                --accent: 270 70% 65%;
-                --accent-foreground: 0 0% 98%;
-                --destructive: 0 62.8% 50.6%;
-                --destructive-foreground: 0 0% 98%;
-                --border: 230 30% 25%;
-                --input: 230 35% 15%;
-                --ring: 270 70% 65%;
-                --gradient-start: 230 50% 25%;
-                --gradient-end: 270 60% 55%;
-                --glass-bg: 230 30% 9%;
-                --glass-border: 230 30% 25%;
+                --background: 0 0% 8%; /* Um cinza muito escuro, quase preto */
+                --foreground: 0 0% 98%; /* Branco com um toque de suavidade */
+                --card: 230 20% 12%; --card-foreground: 0 0% 98%;
+                --popover: 0 0% 8%; --popover-foreground: 0 0% 98%;
+                --primary: 270 70% 65%; --primary-foreground: 0 0% 98%;
+                --secondary: 230 20% 15%; --secondary-foreground: 0 0% 98%;
+                --muted: 230 20% 20%; --muted-foreground: 220 15% 75%; /* Cinza claro para texto muted */
+                --accent: 270 70% 65%; --accent-foreground: 0 0% 98%;
+                --destructive: 0 62.8% 50.6%; --destructive-foreground: 0 0% 98%;
+                --border: 230 20% 25%; --input: 230 20% 15%; --ring: 270 70% 65%;
             }
-
             * { @apply border-border; }
             body { @apply bg-background text-foreground; }
         }
         
-        /* Ajuste para garantir texto branco em seções específicas no modo escuro */
-        .dark .text-muted-foreground {
-            color: hsl(var(--foreground) / 0.8); /* Usa a cor principal do texto com 80% de opacidade */
+        /* Regras de correção para o Modo Escuro */
+        .dark h2,
+        .dark p,
+        .dark a,
+        .dark span {
+            color: var(--tw-prose-invert-body, #d1d5db); /* Cor de texto padrão para modo escuro (cinza claro) */
         }
-        .dark section#projetos .text-muted-foreground,
-        .dark section.bg-secondary\/30 .text-muted-foreground {
-            color: hsl(var(--foreground) / 0.9); /* Deixa o texto um pouco mais brilhante nessas seções */
+        .dark h1, .dark h2, .dark h3 {
+             color: var(--tw-prose-invert-headings, #fff); /* Títulos em branco puro */
         }
-        .dark section h2 {
-            color: hsl(var(--foreground)); /* Garante que os títulos da seção sejam branco puro */
+        .dark .text-accent {
+            color: hsl(var(--accent)); /* Garante que a cor de destaque funcione */
+        }
+        .dark .text-primary-foreground {
+            color: hsl(var(--primary-foreground)); /* Garante que o texto na seção Hero seja branco */
+        }
+        .dark footer, .dark footer p, .dark footer a {
+            color: var(--tw-prose-invert-body, #d1d5db) !important; /* Força o texto do rodapé a ser claro */
         }
 
-        /* Keyframes e outros estilos */
+        /* Animações e Hovers */
         @keyframes accordion-down { from { height: 0; } to { height: var(--radix-accordion-content-height); } }
         @keyframes accordion-up { from { height: var(--radix-accordion-content-height); } to { height: 0; } }
-        .card-hover { transition: all 0.3s ease; }
         .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px hsl(var(--accent) / 0.1); }
-        .image-hover { transition: transform 0.5s ease; }
         .image-hover:hover { transform: scale(1.1); }
-        .btn-hover { transition: all 0.3s ease; }
-        .btn-hover:hover { transform: rotate(12deg); }
     </style>
 </head>
 <body class="min-h-screen">
@@ -185,7 +125,7 @@
                     </p>
                 </div>
                 <div class="flex flex-wrap gap-4 justify-center">
-                    <a href="#projetos" class="px-8 py-3 bg-card text-card-foreground hover:bg-card/90 border border-border shadow-lg rounded-lg text-lg font-medium transition">Ver Projetos</a>
+                    <a href="#projetos" class="px-8 py-3 bg-card text-card-foreground hover:bg-card/90 border border-border shadow-lg rounded-lg text-lg font-medium transition card-hover">Ver Projetos</a>
                     <a href="https://github.com/mariaefoliveira" target="_blank" rel="noopener noreferrer" class="px-8 py-3 bg-transparent border border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 rounded-lg text-lg font-medium transition flex items-center gap-2">
                         <i class="fab fa-github h-5 w-5"></i> GitHub
                     </a>
@@ -194,35 +134,29 @@
         </div>
     </section>
 
-    <!-- About Section (Sobre Mim ) -->
-    <section class="py-16 md:py-24 bg-secondary/30">
+    <!-- About Section (Sobre Mim ) - Classe de fundo removida -->
+    <section class="py-16 md:py-24">
         <div class="container px-4 md:px-6">
             <div class="max-w-3xl mx-auto text-center space-y-6">
                 <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Sobre Mim</h2>
-                <p class="text-muted-foreground text-lg leading-relaxed">
+                <p class="text-lg leading-relaxed">
                     Sou uma profissional apaixonada por descobrir histórias escondidas nos dados. Com experiência em ferramentas como Power BI, Looker Studio e Python, desenvolvo soluções analíticas que transformam números complexos em visualizações claras e acionáveis.
                 </p>
                 <div class="flex gap-4 justify-center pt-4">
-                    <a href="https://github.com/mariaefoliveira" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full hover:bg-secondary transition">
-                        <i class="fab fa-github h-5 w-5 text-foreground"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/maria-eduarda-falcao-de-oliveira/" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full hover:bg-secondary transition">
-                        <i class="fab fa-linkedin h-5 w-5 text-foreground"></i>
-                    </a>
-                    <a href="mailto:dudafalcaodeoliveira@gmail.com" class="p-2 rounded-full hover:bg-secondary transition">
-                        <i class="fas fa-envelope h-5 w-5 text-foreground"></i>
-                    </a>
+                    <a href="https://github.com/mariaefoliveira" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full hover:bg-secondary transition"><i class="fab fa-github h-5 w-5"></i></a>
+                    <a href="https://www.linkedin.com/in/maria-eduarda-falcao-de-oliveira/" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full hover:bg-secondary transition"><i class="fab fa-linkedin h-5 w-5"></i></a>
+                    <a href="mailto:dudafalcaodeoliveira@gmail.com" class="p-2 rounded-full hover:bg-secondary transition"><i class="fas fa-envelope h-5 w-5"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projetos" class="py-16 md:py-24">
+    <section id="projetos" class="py-16 md:py-24 bg-card">
         <div class="container px-4 md:px-6">
             <div class="text-center space-y-4 mb-12">
                 <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Meus Projetos</h2>
-                <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+                <p class="text-lg max-w-2xl mx-auto">
                     Explore alguns dos meus trabalhos recentes em análise de dados e visualização.
                 </p>
             </div>
@@ -233,14 +167,14 @@
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-border bg-card/50 backdrop-blur-sm">
+    <footer class="border-t border-border/40 bg-background/95">
         <div class="container px-4 md:px-6 py-8">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                <p class="text-sm text-muted-foreground">&copy; 2025 Maria Eduarda Falcão de Oliveira. Todos os direitos reservados.</p>
+                <p class="text-sm">&copy; 2025 Maria Eduarda Falcão de Oliveira. Todos os direitos reservados.</p>
                 <div class="flex gap-4">
-                    <a href="https://github.com/mariaefoliveira" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-accent transition-colors">GitHub</a>
-                    <a href="https://www.linkedin.com/in/maria-eduarda-falcao-de-oliveira/" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-accent transition-colors">LinkedIn</a>
-                    <a href="mailto:dudafalcaodeoliveira@gmail.com" class="text-muted-foreground hover:text-accent transition-colors">Contato</a>
+                    <a href="https://github.com/mariaefoliveira" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors">GitHub</a>
+                    <a href="https://www.linkedin.com/in/maria-eduarda-falcao-de-oliveira/" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors">LinkedIn</a>
+                    <a href="mailto:dudafalcaodeoliveira@gmail.com" class="hover:text-accent transition-colors">Contato</a>
                 </div>
             </div>
         </div>
