@@ -30,3 +30,8 @@ function loadProfileImage() {
             });
     }
 }
+
+// Chame a função ao carregar a página
+document.addEventListener('DOMContentLoaded', () => {
+    loadProfileImage();
+});
