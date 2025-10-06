@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome CDN para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Config Tailwind customizada (integra design system ) -->
+    <!-- Config Tailwind customizada -->
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -20,7 +20,7 @@
                 },
                 extend: {
                     colors: {
-                        border: 'hsl(var(--border))',
+                        border: 'hsl(var(--border ))',
                         input: 'hsl(var(--input))',
                         ring: 'hsl(var(--ring))',
                         background: 'hsl(var(--background))',
@@ -73,10 +73,10 @@
                     }
                 }
             },
-            plugins: [] // tailwindcss-animate não é necessário para vanilla
+            plugins: []
         }
     </script>
-    <!-- Vars CSS do design system (HSL para azul/roxo harmônico) -->
+    <!-- Vars CSS do design system -->
     <style>
         @layer base {
             :root {
@@ -86,13 +86,13 @@
                 --card-foreground: 230 50% 15%;
                 --popover: 0 0% 100%;
                 --popover-foreground: 230 50% 15%;
-                --primary: 230 50% 25%; /* Azul escuro */
+                --primary: 230 50% 25%;
                 --primary-foreground: 0 0% 98%;
-                --secondary: 270 40% 90%; /* Roxo claro */
+                --secondary: 270 40% 90%;
                 --secondary-foreground: 230 50% 15%;
                 --muted: 220 20% 92%;
                 --muted-foreground: 230 20% 45%;
-                --accent: 270 60% 55%; /* Roxo médio */
+                --accent: 270 60% 55%;
                 --accent-foreground: 0 0% 98%;
                 --destructive: 0 84.2% 60.2%;
                 --destructive-foreground: 0 0% 98%;
@@ -100,45 +100,34 @@
                 --input: 220 20% 88%;
                 --ring: 270 60% 55%;
                 --radius: 0.75rem;
-                --gradient-start: 230 50% 25%; /* Azul para gradient */
-                --gradient-end: 270 60% 55%; /* Roxo para gradient */
+                --gradient-start: 230 50% 25%;
+                --gradient-end: 270 60% 55%;
                 --glass-bg: 0 0% 100%;
                 --glass-border: 220 20% 88%;
             }
             
-            /* CÓDIGO ATUALIZADO PARA O MODO ESCURO */
             .dark {
-                --background: 0 0% 0%; /* PRETO: Alterado de 230 45% 8% para preto puro */
-                --foreground: 0 0% 100%; /* BRANCO: Garante que o texto principal seja branco */
-                
-                /* Ajustes nos cards e outros elementos para harmonizar com o fundo preto */
-                --card: 230 30% 9%; /* Um azul bem escuro para os cards se destacarem do fundo */
+                --background: 0 0% 0%;
+                --foreground: 0 0% 100%;
+                --card: 230 30% 9%;
                 --card-foreground: 0 0% 100%;
                 --popover: 230 30% 9%;
                 --popover-foreground: 0 0% 100%;
-                
-                --primary: 270 70% 65%; /* Roxo mais vibrante para contraste */
+                --primary: 270 70% 65%;
                 --primary-foreground: 0 0% 98%;
-                
                 --secondary: 230 35% 15%;
                 --secondary-foreground: 0 0% 100%;
-                
                 --muted: 230 35% 20%;
-                --muted-foreground: 220 15% 80%; /* Cinza claro para textos secundários */
-                
-                --accent: 270 70% 65%; /* Roxo vibrante como cor de destaque */
+                --muted-foreground: 220 15% 80%;
+                --accent: 270 70% 65%;
                 --accent-foreground: 0 0% 98%;
-                
                 --destructive: 0 62.8% 50.6%;
                 --destructive-foreground: 0 0% 98%;
-                
-                --border: 230 30% 25%; /* Bordas sutis que aparecem no fundo preto */
+                --border: 230 30% 25%;
                 --input: 230 35% 15%;
                 --ring: 270 70% 65%;
-                
                 --gradient-start: 230 50% 25%;
                 --gradient-end: 270 60% 55%;
-                
                 --glass-bg: 230 30% 9%;
                 --glass-border: 230 30% 25%;
             }
@@ -146,19 +135,28 @@
             * { @apply border-border; }
             body { @apply bg-background text-foreground; }
         }
-        /* Keyframes para animações (se necessário) */
+        
+        /* Ajuste para garantir texto branco em seções específicas no modo escuro */
+        .dark .text-muted-foreground {
+            color: hsl(var(--foreground) / 0.8); /* Usa a cor principal do texto com 80% de opacidade */
+        }
+        .dark section#projetos .text-muted-foreground,
+        .dark section.bg-secondary\/30 .text-muted-foreground {
+            color: hsl(var(--foreground) / 0.9); /* Deixa o texto um pouco mais brilhante nessas seções */
+        }
+        .dark section h2 {
+            color: hsl(var(--foreground)); /* Garante que os títulos da seção sejam branco puro */
+        }
+
+        /* Keyframes e outros estilos */
         @keyframes accordion-down { from { height: 0; } to { height: var(--radix-accordion-content-height); } }
         @keyframes accordion-up { from { height: var(--radix-accordion-content-height); } to { height: 0; } }
-        
-        /* Efeitos de hover customizados */
         .card-hover { transition: all 0.3s ease; }
         .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px hsl(var(--accent) / 0.1); }
         .image-hover { transition: transform 0.5s ease; }
         .image-hover:hover { transform: scale(1.1); }
         .btn-hover { transition: all 0.3s ease; }
         .btn-hover:hover { transform: rotate(12deg); }
-
-        /* Removido o CSS que forçava a cor branca, pois o novo tema já corrige isso */
     </style>
 </head>
 <body class="min-h-screen">
@@ -177,7 +175,6 @@
         <div class="container px-4 md:px-6">
             <div class="flex flex-col items-center space-y-8 text-center">
                 <div class="space-y-4 max-w-3xl">
-                    <!-- Título principal linkado para LinkedIn -->
                     <a href="https://www.linkedin.com/in/maria-eduarda-falcao-de-oliveira/" target="_blank" rel="noopener noreferrer">
                         <h1 class="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-primary-foreground drop-shadow-lg">
                             Transformando Dados em <span class="text-accent">Insights Valiosos</span>
@@ -201,7 +198,7 @@
     <section class="py-16 md:py-24 bg-secondary/30">
         <div class="container px-4 md:px-6">
             <div class="max-w-3xl mx-auto text-center space-y-6">
-                <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-foreground">Sobre Mim</h2>
+                <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Sobre Mim</h2>
                 <p class="text-muted-foreground text-lg leading-relaxed">
                     Sou uma profissional apaixonada por descobrir histórias escondidas nos dados. Com experiência em ferramentas como Power BI, Looker Studio e Python, desenvolvo soluções analíticas que transformam números complexos em visualizações claras e acionáveis.
                 </p>
@@ -224,7 +221,7 @@
     <section id="projetos" class="py-16 md:py-24">
         <div class="container px-4 md:px-6">
             <div class="text-center space-y-4 mb-12">
-                <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-foreground">Meus Projetos</h2>
+                <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Meus Projetos</h2>
                 <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
                     Explore alguns dos meus trabalhos recentes em análise de dados e visualização.
                 </p>
