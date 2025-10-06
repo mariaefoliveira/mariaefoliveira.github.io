@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR" class="scroll-smooth dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -146,16 +146,13 @@
     </style>
 </head>
 <body class="min-h-screen">
-    <!-- Header -->
+    <!-- Header (sem botão de toggle) -->
     <header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div class="container flex h-16 items-center justify-between">
             <div class="flex items-center gap-2">
                 <i class="fas fa-chart-line text-accent h-6 w-6"></i>
                 <span class="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">Data Portfolio</span>
             </div>
-            <button id="themeToggle" class="p-2 rounded-full hover:bg-secondary transition-all duration-300" aria-label="Toggle theme">
-                <i class="fas fa-moon h-5 w-5"></i> <!-- Muda via JS -->
-            </button>
         </div>
     </header>
 
