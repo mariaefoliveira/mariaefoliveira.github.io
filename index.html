@@ -107,22 +107,22 @@
             }
             .dark {
                 --background: 230 45% 8%;
-                --foreground: 220 15% 95%;
+                --foreground: 0 0% 100%; /* Branco puro para textos principais */
                 --card: 230 40% 12%;
-                --card-foreground: 220 15% 95%;
+                --card-foreground: 0 0% 100%; /* Branco puro para cards */
                 --popover: 230 40% 12%;
-                --popover-foreground: 220 15% 95%;
+                --popover-foreground: 0 0% 100%; /* Branco puro para popovers */
                 --primary: 270 60% 55%; /* Roxo no dark */
                 --primary-foreground: 0 0% 98%;
                 --secondary: 230 35% 18%;
-                --secondary-foreground: 0 0% 100%; /* Branco puro (era quase branco com tom azulado) */
-                --muted: 230 35% 25%; /* Mais claro que cinza escuro original */
-                --muted-foreground: 0 0% 100%; /* Branco puro (era cinza médio) */
+                --secondary-foreground: 0 0% 100%; /* Branco puro */
+                --muted: 230 35% 25%; /* Mais claro */
+                --muted-foreground: 0 0% 100%; /* Branco puro para textos muted */
                 --accent: 270 60% 55%;
                 --accent-foreground: 0 0% 98%;
                 --destructive: 0 62.8% 50.6%;
                 --destructive-foreground: 0 0% 98%;
-                --border: 230 35% 30%; /* Bordas mais claras (era cinza escuro) */
+                --border: 230 35% 40%; /* Bordas mais claras, sem cinza escuro */
                 --input: 230 35% 18%;
                 --ring: 270 60% 55%;
                 --gradient-start: 230 50% 25%;
@@ -143,10 +143,17 @@
         .image-hover:hover { transform: scale(1.1); }
         .btn-hover { transition: all 0.3s ease; }
         .btn-hover:hover { transform: rotate(12deg); }
+        /* Forçar branco puro em elementos problemáticos (sem cinza) */
+        header, footer { color: white !important; }
+        header * { color: white !important; }
+        footer * { color: white !important; }
+        .text-muted-foreground, .text-secondary-foreground { color: white !important; }
+        section#projetos p, section[bg-secondary/30] p, section[bg-secondary/30] h2 { color: white !important; }
+        .about-icons a i { color: white !important; }
     </style>
 </head>
 <body class="min-h-screen">
-    <!-- Header (sem botão de toggle) -->
+    <!-- Header (toolbar - agora com branco forçado) -->
     <header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div class="container flex h-16 items-center justify-between">
             <div class="flex items-center gap-2">
@@ -161,9 +168,12 @@
         <div class="container px-4 md:px-6">
             <div class="flex flex-col items-center space-y-8 text-center">
                 <div class="space-y-4 max-w-3xl">
-                    <h1 class="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-primary-foreground drop-shadow-lg">
-                        Transformando Dados em <span class="text-accent">Insights Valiosos</span>
-                    </h1>
+                    <!-- Título principal linkado para LinkedIn -->
+                    <a href="https://www.linkedin.com/in/maria-eduarda-falcao-de-oliveira/" target="_blank" rel="noopener noreferrer">
+                        <h1 class="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-primary-foreground drop-shadow-lg">
+                            Transformando Dados em <span class="text-accent">Insights Valiosos</span>
+                        </h1>
+                    </a>
                     <p class="mx-auto max-w-[700px] text-lg md:text-xl text-primary-foreground/90 leading-relaxed">
                         Analista de Dados especializado em criar dashboards interativos e análises que impulsionam decisões estratégicas baseadas em dados.
                     </p>
@@ -178,7 +188,7 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section (Sobre Mim - branco forçado) -->
     <section class="py-16 md:py-24 bg-secondary/30">
         <div class="container px-4 md:px-6">
             <div class="max-w-3xl mx-auto text-center space-y-6">
@@ -186,7 +196,7 @@
                 <p class="text-muted-foreground text-lg leading-relaxed">
                     Sou uma profissional apaixonada por descobrir histórias escondidas nos dados. Com experiência em ferramentas como Power BI, Looker Studio e Python, desenvolvo soluções analíticas que transformam números complexos em visualizações claras e acionáveis.
                 </p>
-                <div class="flex gap-4 justify-center pt-4">
+                <div class="flex gap-4 justify-center pt-4 about-icons">
                     <a href="https://github.com/mariaefoliveira" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full hover:bg-secondary transition">
                         <i class="fab fa-github h-5 w-5 text-foreground"></i>
                     </a>
@@ -216,7 +226,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer (branco forçado) -->
     <footer class="border-t border-border bg-card/50 backdrop-blur-sm">
         <div class="container px-4 md:px-6 py-8">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4">
