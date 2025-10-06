@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome CDN para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Config Tailwind customizada (integra design system) -->
+    <!-- Config Tailwind customizada (integra design system ) -->
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -105,55 +105,64 @@
                 --glass-bg: 0 0% 100%;
                 --glass-border: 220 20% 88%;
             }
+            
+            /* CÓDIGO ATUALIZADO PARA O MODO ESCURO */
             .dark {
-                --background: 230 45% 8%;
-                --foreground: 0 0% 100%; /* Branco puro para textos principais */
-                --card: 230 40% 12%;
-                --card-foreground: 0 0% 100%; /* Branco puro para cards */
-                --popover: 230 40% 12%;
-                --popover-foreground: 0 0% 100%; /* Branco puro para popovers */
-                --primary: 270 60% 55%; /* Roxo no dark */
+                --background: 0 0% 0%; /* PRETO: Alterado de 230 45% 8% para preto puro */
+                --foreground: 0 0% 100%; /* BRANCO: Garante que o texto principal seja branco */
+                
+                /* Ajustes nos cards e outros elementos para harmonizar com o fundo preto */
+                --card: 230 30% 9%; /* Um azul bem escuro para os cards se destacarem do fundo */
+                --card-foreground: 0 0% 100%;
+                --popover: 230 30% 9%;
+                --popover-foreground: 0 0% 100%;
+                
+                --primary: 270 70% 65%; /* Roxo mais vibrante para contraste */
                 --primary-foreground: 0 0% 98%;
-                --secondary: 230 35% 18%;
-                --secondary-foreground: 0 0% 100%; /* Branco puro */
-                --muted: 230 35% 25%; /* Mais claro */
-                --muted-foreground: 0 0% 100%; /* Branco puro para textos muted */
-                --accent: 270 60% 55%;
+                
+                --secondary: 230 35% 15%;
+                --secondary-foreground: 0 0% 100%;
+                
+                --muted: 230 35% 20%;
+                --muted-foreground: 220 15% 80%; /* Cinza claro para textos secundários */
+                
+                --accent: 270 70% 65%; /* Roxo vibrante como cor de destaque */
                 --accent-foreground: 0 0% 98%;
+                
                 --destructive: 0 62.8% 50.6%;
                 --destructive-foreground: 0 0% 98%;
-                --border: 230 35% 40%; /* Bordas mais claras, sem cinza escuro */
-                --input: 230 35% 18%;
-                --ring: 270 60% 55%;
+                
+                --border: 230 30% 25%; /* Bordas sutis que aparecem no fundo preto */
+                --input: 230 35% 15%;
+                --ring: 270 70% 65%;
+                
                 --gradient-start: 230 50% 25%;
                 --gradient-end: 270 60% 55%;
-                --glass-bg: 230 40% 12%;
-                --glass-border: 230 35% 25%;
+                
+                --glass-bg: 230 30% 9%;
+                --glass-border: 230 30% 25%;
             }
+
             * { @apply border-border; }
             body { @apply bg-background text-foreground; }
         }
         /* Keyframes para animações (se necessário) */
         @keyframes accordion-down { from { height: 0; } to { height: var(--radix-accordion-content-height); } }
         @keyframes accordion-up { from { height: var(--radix-accordion-content-height); } to { height: 0; } }
-        /* Hover effects custom para cards */
+        
+        /* Efeitos de hover customizados */
         .card-hover { transition: all 0.3s ease; }
         .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px hsl(var(--accent) / 0.1); }
         .image-hover { transition: transform 0.5s ease; }
         .image-hover:hover { transform: scale(1.1); }
         .btn-hover { transition: all 0.3s ease; }
         .btn-hover:hover { transform: rotate(12deg); }
-        /* Forçar branco puro em elementos problemáticos (sem cinza) */
-        header, footer { color: white !important; }
-        header * { color: white !important; }
-        footer * { color: white !important; }
-        .text-muted-foreground, .text-secondary-foreground { color: white !important; }
-        section#projetos p, section[bg-secondary/30] p, section[bg-secondary/30] h2 { color: white !important; }
-        .about-icons a i { color: white !important; }
+
+        /* Removido o CSS que forçava a cor branca, pois o novo tema já corrige isso */
     </style>
 </head>
 <body class="min-h-screen">
-    <!-- Header (toolbar - agora com branco forçado) -->
+    <!-- Header -->
     <header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div class="container flex h-16 items-center justify-between">
             <div class="flex items-center gap-2">
@@ -188,7 +197,7 @@
         </div>
     </section>
 
-    <!-- About Section (Sobre Mim - branco forçado) -->
+    <!-- About Section (Sobre Mim ) -->
     <section class="py-16 md:py-24 bg-secondary/30">
         <div class="container px-4 md:px-6">
             <div class="max-w-3xl mx-auto text-center space-y-6">
@@ -196,7 +205,7 @@
                 <p class="text-muted-foreground text-lg leading-relaxed">
                     Sou uma profissional apaixonada por descobrir histórias escondidas nos dados. Com experiência em ferramentas como Power BI, Looker Studio e Python, desenvolvo soluções analíticas que transformam números complexos em visualizações claras e acionáveis.
                 </p>
-                <div class="flex gap-4 justify-center pt-4 about-icons">
+                <div class="flex gap-4 justify-center pt-4">
                     <a href="https://github.com/mariaefoliveira" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full hover:bg-secondary transition">
                         <i class="fab fa-github h-5 w-5 text-foreground"></i>
                     </a>
@@ -226,7 +235,7 @@
         </div>
     </section>
 
-    <!-- Footer (branco forçado) -->
+    <!-- Footer -->
     <footer class="border-t border-border bg-card/50 backdrop-blur-sm">
         <div class="container px-4 md:px-6 py-8">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4">
