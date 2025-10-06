@@ -44,53 +44,51 @@
     <style>
         @layer base {
             :root {
-                /* Cores do Modo Claro (Padrão) */
-                --background: 220 25% 97%;
-                --foreground: 230 50% 15%;
-                --card: 0 0% 100%;
-                --card-foreground: 230 50% 15%;
-                --popover: 0 0% 100%;
-                --popover-foreground: 230 50% 15%;
-                --primary: 230 50% 25%;
-                --primary-foreground: 0 0% 98%;
-                --secondary: 270 40% 90%;
-                --secondary-foreground: 230 50% 15%;
-                --muted: 220 20% 92%;
-                --muted-foreground: 230 20% 45%;
-                --accent: 270 60% 55%;
-                --accent-foreground: 0 0% 98%;
-                --destructive: 0 84.2% 60.2%;
-                --destructive-foreground: 0 0% 98%;
-                --border: 220 20% 88%;
-                --input: 220 20% 88%;
-                --ring: 270 60% 55%;
-                --radius: 0.75rem;
-                --gradient-start: 230 50% 25%;
-                --gradient-end: 270 60% 55%;
-            }
-            .dark {
-                /* Modo escuro: fundo roxo bem escuro/quase preto, textos brancos */
-                --background: 270 35% 7%; /* Roxo bem escuro (quase preto, harmoniza com o roxo do gradiente) */
-                --foreground: 0 0% 100%; /* Branco puro para texto principal */
-                --card: 270 35% 12%; /* Card um pouco mais claro que o fundo */
-                --card-foreground: 0 0% 100%; /* Branco puro para texto em card */
+                --background: 270 35% 7%; /* Fundo geral: roxo quase preto */
+                --foreground: 0 0% 100%; /* Branco puro */
+                --card: 270 35% 12%; /* Card mais claro */
+                --card-foreground: 0 0% 100%;
                 --popover: 270 35% 12%;
                 --popover-foreground: 0 0% 100%;
-                --primary: 270 60% 55%; /* Roxo médio para gradiente/botões */
+                --primary: 270 60% 30%; /* Header: roxo escuro */
                 --primary-foreground: 0 0% 100%;
                 --secondary: 270 40% 20%; /* Roxo escuro para elementos secundários */
                 --secondary-foreground: 0 0% 100%;
-                --muted: 270 20% 25%; /* Roxo acinzentado para textos muted */
-                --muted-foreground: 0 0% 98%; /* Quase branco para textos muted */
-                --accent: 270 60% 55%;
+                --muted: 270 20% 25%; /* Roxo acinzentado */
+                --muted-foreground: 0 0% 98%;
+                --accent: 270 60% 50%; /* Roxo médio para ícones/acento */
                 --accent-foreground: 0 0% 100%;
                 --destructive: 0 62.8% 50.6%;
                 --destructive-foreground: 0 0% 98%;
-                --border: 270 20% 25%; /* Roxo acinzentado para bordas */
-                --input: 270 20% 15%; /* Roxo acinzentado para inputs */
-                --ring: 270 60% 55%;
-                --gradient-start: 230 50% 25%; /* Azul escuro */
-                --gradient-end: 270 60% 55%; /* Roxo médio */
+                --border: 270 20% 25%;
+                --input: 270 20% 15%;
+                --ring: 270 60% 50%;
+                --radius: 0.75rem;
+                --gradient-start: 230 50% 15%; /* Azul escuro para início do gradiente */
+                --gradient-end: 270 60% 18%; /* Roxo bem escuro para fim do gradiente hero */
+            }
+            .dark {
+                --background: 270 35% 7%;
+                --foreground: 0 0% 100%;
+                --card: 270 35% 12%;
+                --card-foreground: 0 0% 100%;
+                --popover: 270 35% 12%;
+                --popover-foreground: 0 0% 100%;
+                --primary: 270 60% 30%;
+                --primary-foreground: 0 0% 100%;
+                --secondary: 270 40% 20%;
+                --secondary-foreground: 0 0% 100%;
+                --muted: 270 20% 25%;
+                --muted-foreground: 0 0% 98%;
+                --accent: 270 60% 50%;
+                --accent-foreground: 0 0% 100%;
+                --destructive: 0 62.8% 50.6%;
+                --destructive-foreground: 0 0% 98%;
+                --border: 270 20% 25%;
+                --input: 270 20% 15%;
+                --ring: 270 60% 50%;
+                --gradient-start: 230 50% 15%;
+                --gradient-end: 270 60% 18%;
             }
             * { @apply border-border; }
             body { @apply bg-background text-foreground; }
@@ -103,23 +101,23 @@
         @keyframes accordion-up { from { height: var(--radix-accordion-content-height); } to { height: 0; } }
         .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px hsl(var(--accent) / 0.1); }
         .image-hover:hover { transform: scale(1.1); }
-        /* Garantir branco puro em header/footer e textos principais */
         header, footer, header *, footer *, .text-foreground, .text-primary-foreground, .text-muted-foreground, .text-secondary-foreground {
             color: #fff !important;
         }
     </style>
 </head>
 <body class="min-h-screen">
-    <header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <!-- Header com roxo profundo -->
+    <header class="sticky top-0 z-50 w-full border-b border-border/40 bg-primary/90 backdrop-blur supports-[backdrop-filter]:bg-primary/80">
         <div class="container flex h-16 items-center justify-between">
             <div class="flex items-center gap-2">
                 <i class="fas fa-chart-line text-accent h-6 w-6"></i>
-                <!-- Data Portfolio com gradiente azul-roxo e texto branco -->
                 <span class="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">Data Portfolio</span>
             </div>
         </div>
     </header>
 
+    <!-- Hero Section com roxo bem escuro -->
     <section class="relative overflow-hidden bg-gradient-radial py-20 md:py-32">
         <div class="container px-4 md:px-6">
             <div class="flex flex-col items-center space-y-8 text-center">
