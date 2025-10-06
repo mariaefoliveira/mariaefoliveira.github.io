@@ -1,7 +1,48 @@
-// Inicialização ao carregar a página (apenas projetos)
 document.addEventListener('DOMContentLoaded', () => {
+    // 1. Carrega e renderiza os projetos
     loadProjects();
+    
+    // 2. Carrega a imagem de perfil do GitHub
+    loadProfileImage(); 
 });
+
+// ----------------------------------------------------------------------
+// FUNÇÃO PARA CARREGAR A IMAGEM DE PERFIL DO GITHUB
+// ----------------------------------------------------------------------
+function loadProfileImage() {
+    const githubUsername = 'mariaefoliveira'; // <-- MANTENHA OU MUDE SE SEU USERNAME FOR OUTRO!
+    const profileImageContainer = document.getElementById('profile-image-container');
+
+    if (profileImageContainer && githubUsername) {
+        fetch(`https://api.github.com/users/${githubUsername}`)
+            .then(response => {
+                if (!response.ok) throw new Error('Falha ao buscar dados do usuário GitHub.');
+                return response.json();
+            })
+            .then(data => {
+                if (data.avatar_url) {
+                    // Cria o elemento da imagem com a classe de estilo e borda roxa
+                    const img = document.createElement('img');
+                    img.src = data.avatar_url;
+                    img.alt = `Foto de Perfil de ${githubUsername}`;
+                    img.className = 'w-36 h-36 rounded-full profile-border object-cover transition-transform image-hover';
+                    img.loading = 'lazy'; // Otimização de carregamento
+                    
+                    // Substitui o placeholder pela imagem real
+                    profileImageContainer.innerHTML = ''; 
+                    profileImageContainer.appendChild(img);
+                }
+            })
+            .catch(error => {
+                console.error('Erro ao carregar a imagem de perfil do GitHub:', error);
+                // Se falhar, a imagem placeholder do HTML será mantida.
+            });
+    }
+}
+
+// ----------------------------------------------------------------------
+// FUNÇÕES PARA CARREGAR E RENDERIZAR PROJETOS (Seu código original)
+// ----------------------------------------------------------------------
 
 // Função para carregar e renderizar projetos
 function loadProjects() {
