@@ -1,10 +1,10 @@
 [
   {
-    "title": "Dashboard de Vendas - Power BI",
-    "description": "Dashboard interativo para análise de performance de vendas, incluindo métricas de KPIs, tendências temporais e análise geográfica com drill-down por região.",
-    "tecnologias": ["Power BI", "DAX", "Power Query", "SQL"],
-    "githubUrl": "https://github.com/seu-usuario/dashboard-vendas",
-    "demoUrl": "https://app.powerbi.com/view?r=exemplo",
+    "title": "Dashboard - Relatório dos Sobreviventes do Titanic",
+    "description": "Dashboard interativo para análise de sobrevivência dos passageiros do Titanic e possíveis influenciadores, também foi incluso valor médio do custo de passagem e as classes sobreviventes.",
+    "tecnologias": ["Power BI", "DAX", "Power Query"],
+    "githubUrl": "https://github.com/mariaefoliveira/Analise_dos_passageiros_do_Titanic",
+    "demoUrl": "https://app.powerbi.com/reportEmbed?reportId=d948e870-883c-49e2-8bb0-4db4be6f4292&autoAuth=true&ctid=b03ef0ca-9fb1-4bc3-96d8-e51b607520b6",
     "image": "https://images.unsplash.com/photo-1551288049-bebda4e"
   }
 ]
