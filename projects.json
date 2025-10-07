@@ -4,7 +4,7 @@
     "description": "Dashboard interativo para análise de sobrevivência dos passageiros do Titanic e possíveis influenciadores, também foi incluso valor médio do custo de passagem e as classes sobreviventes.",
     "tecnologias": ["Power BI", "DAX", "Power Query"],
     "githubUrl": "https://github.com/mariaefoliveira/Analise_dos_passageiros_do_Titanic",
-    "demoUrl": "https://app.powerbi.com/reportEmbed?reportId=d948e870-883c-49e2-8bb0-4db4be6f4292&autoAuth=true&ctid=b03ef0ca-9fb1-4bc3-96d8-e51b607520b6",
+    "demoUrl": "https://app.powerbi.com/links/hdvWgVwCbZ?ctid=b03ef0ca-9fb1-4bc3-96d8-e51b607520b6&pbi_source=linkShare",
     "image": "https://github.com/mariaefoliveira/Analise_dos_passageiros_do_Titanic/blob/main/Imagem-Print/Tela%20principal-Dashboard.png?raw=true"
   }
 ]
