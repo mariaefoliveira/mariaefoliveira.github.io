@@ -1,10 +1,34 @@
 [
   {
+    "title": "Dashboard - Análise Financeira do Fluxo de Caixa",
+    "description": "Criado para apresentar a análise financeira do fluxo de caixa executado após o encontro ao vivo no youtube, 'Imersão de Power BI' de Leticia Smirelli e Karine Lago. O fundo do dashboard foi criado com o Figma e utilizado no Power BI para fazer um visual mais elegante.",
+    "tecnologias": ["Power BI", "Power Query", "Figma"],
+    "githubUrl": "https://github.com/mariaefoliveira/Analise-Financeira-do-Fluxo-de-Caixa",
+    "demoUrl": "https://youtu.be/6uta82X-jEU", 
+    "image": "https://github.com/mariaefoliveira/Analise-Financeira-do-Fluxo-de-Caixa/blob/main/Images/Tela-DashboardFinanceiro.png?raw=true"
+  },
+  {
     "title": "Dashboard - Relatório dos Sobreviventes do Titanic",
     "description": "Dashboard interativo com a análise de sobrevivência dos passageiros do Titanic e possíveis influenciadores, também foi incluso valor médio do custo de passagem e as classes sobreviventes.",
     "tecnologias": ["Power BI", "DAX", "Power Query"],
     "githubUrl": "https://github.com/mariaefoliveira/Analise_dos_passageiros_do_Titanic",
     "demoUrl": "https://youtu.be/FnowvrJPHE4?si=1j_Gzg5kPUNRRmnJ", 
     "image": "https://github.com/mariaefoliveira/Analise_dos_passageiros_do_Titanic/blob/main/Imagem-Print/Tela%20principal-Dashboard.png?raw=true"
+  },
+  {
+    "title": "Dashboard de Vendas e KPI - DSA - Lab 2",
+    "description": "Dashboard com relatório de Vendas e uso de KPI, elaborado durante estudos na DSA.",
+    "tecnologias": ["Power BI", "DAX", "Power Query", "Medidas"],
+    "githubUrl": "https://github.com/mariaefoliveira/PowerBI/tree/main",
+    "demoUrl": "https://youtu.be/XIlNDv7F6C4", 
+    "image": "https://github.com/mariaefoliveira/PowerBI/blob/main/DSA-Lab2/Tela-%20Dashboard%20de%20Vendas%20e%20KPI.png?raw=true"
+  },
+  {
+    "title": "Dashboard de Vendas Globais - DSA - Lab 1",
+    "description": "Análise das Vendas Globais, um laboratório produzido através dos estudos na DSA.",
+    "tecnologias": ["Power BI", "DAX", "Power Query"],
+    "githubUrl": "https://github.com/mariaefoliveira/PowerBI",
+    "demoUrl": "https://youtu.be/SRzbWZzon64", 
+    "image": "https://github.com/mariaefoliveira/PowerBI/blob/main/DSA-Lab1/Tela%20-%20Dashboard%20de%20Vendas%20Globais%20-%20DSA%20-%20Lab%201.png?raw=true"
   }
 ]
