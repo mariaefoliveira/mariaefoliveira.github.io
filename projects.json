@@ -1,7 +1,7 @@
 [
   {
     "title": "Dashboard - Análise Financeira do Fluxo de Caixa",
-    "description": "Criado para apresentar a análise financeira do fluxo de caixa executado após o encontro ao vivo no youtube, 'Imersão de Power BI' de Leticia Smirelli e Karine Lago. O fundo do dashboard foi criado com o Figma e utilizado no Power BI para fazer um visual mais elegante.",
+    "description": "Criado para apresentar a análise financeira do fluxo de caixa executado após o encontro ao vivo no youtube, o design do dashboard foi criado com o Figma e utilizado no Power BI para um visual mais elegante.",
     "tecnologias": ["Power BI", "Power Query", "Figma"],
     "githubUrl": "https://github.com/mariaefoliveira/Analise-Financeira-do-Fluxo-de-Caixa",
     "demoUrl": "https://youtu.be/6uta82X-jEU", 
