@@ -20,7 +20,7 @@
   {
     "title": "Dashboard - Relatório dos Sobreviventes do Titanic",
     "description": "Dashboard interativo com a análise de sobrevivência dos passageiros do Titanic e possíveis influenciadores, também foi incluso valor médio do custo de passagem e as classes sobreviventes.",
-    "tecnologias": ["Power BI", "DAX", "Power Query", "Medidas"],
+    "tecnologias": ["Python", "Power BI", "DAX", "Power Query", "Medidas"],
     "githubUrl": "https://github.com/mariaefoliveira/Analise_dos_passageiros_do_Titanic",
     "demoUrl": "https://youtu.be/FnowvrJPHE4?si=1j_Gzg5kPUNRRmnJ", 
     "image": "https://github.com/mariaefoliveira/Analise_dos_passageiros_do_Titanic/blob/main/Imagem-Print/Tela%20principal-Dashboard.png?raw=true",
@@ -36,9 +36,27 @@
     "category": "Dashboard"
   },
   {
+    "title": "Análise dos passageiros do Titanic",
+    "description": "Análise descritiva dos dados de sobreviventes do titanic.",
+    "tecnologias": ["Python", "Power BI", "DAX", "Power Query", "Medidas"],
+    "githubUrl": "https://github.com/mariaefoliveira/Analise_dos_passageiros_do_Titanic",
+    "demoUrl": "https://www.kaggle.com/code/noragan/an-lise-dos-passageiros-do-titanic", 
+    "image": "https://github.com/mariaefoliveira/Analise_dos_passageiros_do_Titanic/blob/main/Imagem-Print/Imagem-Kaggle.png?raw=true",
+    "category": "Analises"
+  },
+  {
+    "title": "Análise de Mensagens do Telegram com AWS",
+    "description": "O projeto tem como objetivo explorar como as mensagens enviadas no grupo do telegram podem ser utilizados para gerar insights, focando na utilização de sistemas que capturam dados através do bot api do telegram e processam as informações via AWS.",
+    "tecnologias": ["Python", "Json", "Nuvem-AWS", "API Telegram"],
+    "githubUrl": "https://github.com/mariaefoliveira/Projeto-Ebac-Analise-de-Mensagens-do-Telegram-com-AWS/tree/main",
+    "demoUrl": "https://www.kaggle.com/code/noragan/an-lise-de-mensagens-do-telegram-com-aws", 
+    "image": "https://github.com/mariaefoliveira/Projeto-Ebac-Analise-de-Mensagens-do-Telegram-com-AWS/blob/main/Imagem/Imagem-Kaggle.png?raw=true",
+    "category": "Analises"
+  },
+  {
     "title": "Análise Exploratória de Dados Logísticos",
     "description": "Para incrementar na melhora da eficiência da entrega a Loggi Bud precisa-se dos dados da quantidade de entrega, uma média de entregas realizadas e uma visão melhor do fluxo das entregas.",
-    "tecnologias": ["Python", "Pandas", "Geopandas", "Matplotlib"],
+    "tecnologias": ["Python", "Json", "Geopandas", "Matplotlib"],
     "githubUrl": "https://github.com/mariaefoliveira/Analise-Exploratoria-de-Dados-de-Logistica",
     "demoUrl": "https://www.kaggle.com/code/noragan/an-lise-explorat-ria-de-dados-log-sticos", 
     "image": "https://github.com/mariaefoliveira/Analise-Exploratoria-de-Dados-de-Logistica/blob/main/Image/Imagem-Kaggle.png?raw=true",
