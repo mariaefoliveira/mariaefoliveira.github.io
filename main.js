@@ -55,7 +55,7 @@ function renderProjects(category) {
     if (filteredProjects.length === 0) {
         projectsGrid.innerHTML = `
             <p class="text-lg text-muted-foreground text-center col-span-full py-10">
-                Ainda não há projetos na categoria de "${category}". Adicione-os ao seu projects.json!
+                Ainda não há projetos na categoria de "${category}".
             </p>
         `;
         return;
@@ -163,3 +163,4 @@ document.addEventListener('DOMContentLoaded', () => {
     loadProfileImage();
     initProjects(); // Chama a função principal que gerencia as abas
 });
+
