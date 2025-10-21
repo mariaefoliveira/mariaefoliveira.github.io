@@ -34,5 +34,14 @@
     "demoUrl": "https://youtu.be/XIlNDv7F6C4", 
     "image": "https://github.com/mariaefoliveira/PowerBI/blob/main/DSA-Lab2/Tela-%20Dashboard%20de%20Vendas%20e%20KPI.png?raw=true",
     "category": "Dashboard"
+  },
+  {
+    "title": "Dashboard de Vendas e KPI - DSA - Lab 2",
+    "description": "Análise das indústrias brasileiras com o capital de maior destaque no ano de 2022.",
+    "tecnologias": ["Python", "Pandas", "Seaborn"],
+    "githubUrl": "https://github.com/mariaefoliveira/Analise-de-Startups-Unicornio-no-Brasil-2022",
+    "demoUrl": "https://www.kaggle.com/code/noragan/an-lise-de-startups-unic-rnio-no-brasil-2022", 
+    "image": "https://github.com/mariaefoliveira/Analise-de-Startups-Unicornio-no-Brasil-2022/blob/main/Image/Imagem-Kaggle.png?raw=true",
+    "category": "Analises"
   }
 ]
