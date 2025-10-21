@@ -207,9 +207,30 @@
                     Explore alguns dos meus trabalhos recentes em análise de dados e visualização.
                 </p>
             </div>
-            <div id="projetos-grid" class="grid gap-6 md:grid-cols-2 lg:grid-cols-2 max-w-6xl mx-auto">
-                </div>
+            <!--PROJETOS POR ABAS-->
+            <div class="flex justify-center mb-10">
+            <div class="inline-flex rounded-lg border border-accent/40 bg-card p-1 shadow-xl">
+                <button
+                    id="tab-dashboard"
+                    class="tab-button px-6 py-2 text-sm font-medium transition-colors bg-accent text-accent-foreground hover:bg-accent/80 rounded-lg"
+                    data-category="Dashboard"
+                    aria-selected="true"
+                >
+                    Dashboards
+                </button>
+                <button
+                    id="tab-analises"
+                    class="tab-button px-6 py-2 text-sm font-medium transition-colors text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg ml-1"
+                    data-category="Analises"
+                    aria-selected="false"
+                >
+                    Análises
+                </button>
+            </div>
         </div>
+        <div id="projetos-grid" class="grid gap-6 md:grid-cols-2 lg:grid-cols-2 max-w-6xl mx-auto">
+            </div>
+    </div>
     </section>
 
     <footer class="border-t border-border/40 bg-card">
@@ -228,6 +249,7 @@
     <script src="main.js"></script>
 </body>
 </html>
+
 
 
 
