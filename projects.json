@@ -5,7 +5,8 @@
     "tecnologias": ["Power BI", "Power Query", "Figma"],
     "githubUrl": "https://github.com/mariaefoliveira/Analise-Financeira-do-Fluxo-de-Caixa",
     "demoUrl": "https://youtu.be/6uta82X-jEU", 
-    "image": "https://github.com/mariaefoliveira/Analise-Financeira-do-Fluxo-de-Caixa/blob/main/Images/Tela-DashboardFinanceiro.png?raw=true"
+    "image": "https://github.com/mariaefoliveira/Analise-Financeira-do-Fluxo-de-Caixa/blob/main/Images/Tela-DashboardFinanceiro.png?raw=true",
+    "category": "Dashboard"
   },
   {
     "title": "Dashboard de Análise Financeira",
@@ -13,7 +14,8 @@
     "tecnologias": ["Power BI", "Power Query"],
     "githubUrl": "https://github.com/mariaefoliveira/power_bi_analyst-desafio-DIO-Financial",
     "demoUrl": "https://youtu.be/ZHeA6Ax1Qto", 
-    "image": "https://github.com/mariaefoliveira/power_bi_analyst-desafio-DIO-Financial/blob/main/Images/P%C3%A1gina1.png?raw=true"
+    "image": "https://github.com/mariaefoliveira/power_bi_analyst-desafio-DIO-Financial/blob/main/Images/P%C3%A1gina1.png?raw=true",
+    "category": "Dashboard"
   },
   {
     "title": "Dashboard - Relatório dos Sobreviventes do Titanic",
@@ -21,7 +23,8 @@
     "tecnologias": ["Power BI", "DAX", "Power Query", "Medidas"],
     "githubUrl": "https://github.com/mariaefoliveira/Analise_dos_passageiros_do_Titanic",
     "demoUrl": "https://youtu.be/FnowvrJPHE4?si=1j_Gzg5kPUNRRmnJ", 
-    "image": "https://github.com/mariaefoliveira/Analise_dos_passageiros_do_Titanic/blob/main/Imagem-Print/Tela%20principal-Dashboard.png?raw=true"
+    "image": "https://github.com/mariaefoliveira/Analise_dos_passageiros_do_Titanic/blob/main/Imagem-Print/Tela%20principal-Dashboard.png?raw=true",
+    "category": "Dashboard"
   },
   {
     "title": "Dashboard de Vendas e KPI - DSA - Lab 2",
@@ -29,6 +32,7 @@
     "tecnologias": ["Power BI", "DAX", "Power Query", "Medidas"],
     "githubUrl": "https://github.com/mariaefoliveira/PowerBI/tree/main",
     "demoUrl": "https://youtu.be/XIlNDv7F6C4", 
-    "image": "https://github.com/mariaefoliveira/PowerBI/blob/main/DSA-Lab2/Tela-%20Dashboard%20de%20Vendas%20e%20KPI.png?raw=true"
+    "image": "https://github.com/mariaefoliveira/PowerBI/blob/main/DSA-Lab2/Tela-%20Dashboard%20de%20Vendas%20e%20KPI.png?raw=true",
+    "category": "Dashboard"
   }
 ]
