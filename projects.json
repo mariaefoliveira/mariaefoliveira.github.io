@@ -36,6 +36,15 @@
     "category": "Dashboard"
   },
   {
+    "title": "Análise Exploratória de Dados Logísticos",
+    "description": "Para incrementar na melhora da eficiência da entrega a Loggi Bud precisa-se dos dados da quantidade de entrega, uma média de entregas realizadas e uma visão melhor do fluxo das entregas.",
+    "tecnologias": ["Python", "Pandas", "Geopandas", "Matplotlib"],
+    "githubUrl": "https://github.com/mariaefoliveira/Analise-Exploratoria-de-Dados-de-Logistica",
+    "demoUrl": "https://www.kaggle.com/code/noragan/an-lise-explorat-ria-de-dados-log-sticos", 
+    "image": "https://github.com/mariaefoliveira/Analise-Exploratoria-de-Dados-de-Logistica/blob/main/Image/Imagem-Kaggle.png?raw=true",
+    "category": "Analises"
+  },
+  {
     "title": "Análise de Startups Unicórnio no Brasil (2022)",
     "description": "Análise das indústrias brasileiras com o capital de maior destaque no ano de 2022.",
     "tecnologias": ["Python", "Pandas", "Seaborn"],
