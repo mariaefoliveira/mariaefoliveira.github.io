@@ -36,7 +36,7 @@
     "category": "Dashboard"
   },
   {
-    "title": "Dashboard de Vendas e KPI - DSA - Lab 2",
+    "title": "Análise de Startups Unicórnio no Brasil (2022)",
     "description": "Análise das indústrias brasileiras com o capital de maior destaque no ano de 2022.",
     "tecnologias": ["Python", "Pandas", "Seaborn"],
     "githubUrl": "https://github.com/mariaefoliveira/Analise-de-Startups-Unicornio-no-Brasil-2022",
